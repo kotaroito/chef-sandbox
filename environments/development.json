@@ -1,0 +1,13 @@
+{
+  "name": "development",
+  "description": "Development Environment",
+  "chef_type": "environment",
+  "json_class": "Chef::Environment",
+  "default_attributes" : {
+    "apache": {
+      "max_children": "10"
+    }
+  },
+  "override_attributes" : {}
+}
+
