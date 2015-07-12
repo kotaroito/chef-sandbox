@@ -13,7 +13,8 @@
     }
   },
   "run_list": [
-    "recipe[apache]",
+    "recipe[screen]",
+    "recipe[nginx]",
     "recipe[ruby-env]"
   ]
 }
