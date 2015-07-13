@@ -12,6 +12,20 @@ package "nginx" do
   action :install
 end
 
+# default conf
+template "sites-available/default" do
+  path '/etc/nginx/sites-available/default'
+  source 'sites-available/default.conf.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  notifies :reload, 'service[nginx]'
+end
+
+link '/etc/nginx/sites-available/default' do
+ to '/etc/nginx/sites-enabled/default'
+end
+
 service "nginx" do
   action [ :enable, :start ]
   supports status: true, restart: true, reload: true
