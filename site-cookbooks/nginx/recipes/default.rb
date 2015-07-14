@@ -22,8 +22,8 @@ template "sites-available/default" do
   notifies :reload, 'service[nginx]'
 end
 
-link '/etc/nginx/sites-available/default' do
- to '/etc/nginx/sites-enabled/default'
+link '/etc/nginx/sites-enabled/default' do
+ to '/etc/nginx/sites-available/default'
 end
 
 service "nginx" do
